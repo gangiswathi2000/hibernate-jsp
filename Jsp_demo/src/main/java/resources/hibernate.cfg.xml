@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory>
+
+  <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+  <property name="hibernate.connection.password">12345</property>
+  <property name="hibernate.connection.url">jdbc:sqlserver://PLANON-F0HRXJ2;instance=SQLEXPRESS;databaseName=Message</property>
+  <property name="hibernate.connection.username">swathi</property>
+  <property name="hbm2ddl.auto">update</property>
+  <property name="current_session_context_class">thread</property>
+ <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+ <property name="current_session_context_class">thread</property>
+		<!-- Disable the second-level cache -->
+		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">true</property>
+ <mapping class="com.demo.mypackage.Employee" />
+ </session-factory>
+</hibernate-configuration>

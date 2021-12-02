@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee; http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>Jsp_demo</display-name>
+	<welcome-file-list>
+		<welcome-file>Home.jsp</welcome-file>
+	</welcome-file-list>
+
+
+	<servlet>
+		<servlet-name>Validateservlet</servlet-name>
+		<servlet-class>com.demo.mypackage.Validateservlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Validateservlet</servlet-name>
+		<url-pattern>/adding</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>index</servlet-name>
+		<servlet-class>Index</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>index</servlet-name>
+		<url-pattern>/Index</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>servlet</servlet-name>
+		<servlet-class>com.demo.mypackage.Servlet_to_get</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>servlet</servlet-name>
+		<url-pattern>/servlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-class>com.demo.mypackage.Servlet_to_get</servlet-class>
+		<servlet-name>delete
+		</servlet-name>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>delete</servlet-name>
+		<url-pattern>/delete</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-class>com.demo.mypackage.updateServlet</servlet-class>
+		<servlet-name>update
+		</servlet-name>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>update</servlet-name>
+		<url-pattern>/updateServlet</url-pattern>
+	</servlet-mapping>
+</web-app>

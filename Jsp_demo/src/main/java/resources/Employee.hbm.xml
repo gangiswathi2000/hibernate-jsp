@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-lazy="false" auto-import="false">
+<class name="com.demo.mypackage.Employee;"
+table="employee_details">
+<id name="id" type="int" column="Id">
+<generator class="auto" />
+</id>
+<property name="fname" type="string" column="fname" />
+<property name="lname" type="string" column="lname" />
+</class>
+</hibernate-mapping>
