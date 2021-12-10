@@ -54,4 +54,12 @@
 		<servlet-name>update</servlet-name>
 		<url-pattern>/updateServlet</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>fetch</servlet-name>
+		<servlet-class>com.demo.mypackage.updateServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>fetch</servlet-name>
+		<url-pattern>/fetch</url-pattern>
+	</servlet-mapping>
 </web-app>

@@ -2,9 +2,6 @@ package com.demo.mypackage;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
-import javax.ws.rs.core.Request;
-
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -67,20 +64,6 @@ public class StoreData {
         }
 		
 	}
-//	public static void update(Employee e) {
-//		Session session = SingletonClass.getsession();
-//		try {
-//		session.beginTransaction();
-//		session.delete(e);
-//		System.out.println("update performed!");
-//		session.getTransaction().commit();
-//		}
-//		catch (HibernateException e1) {
-//            System.out.println(e1.getMessage());
-//            session.getTransaction().rollback();
-//        }
-//		
-//	}
 	public static void update(int id,Employee e){
 		Session session = SingletonClass.getsession();
 	  

@@ -5,7 +5,7 @@
 <class name="com.demo.mypackage.Employee;"
 table="employee_details">
 <id name="id" type="int" column="Id">
-<generator class="auto" />
+<generator class="identity" />
 </id>
 <property name="fname" type="string" column="fname" />
 <property name="lname" type="string" column="lname" />

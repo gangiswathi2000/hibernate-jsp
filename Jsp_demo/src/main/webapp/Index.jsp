@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<%@page import="com.demo.mypackage.StoreData"%>
+<jsp:useBean id="obj" class="com.demo.mypackage.Employee">
+</jsp:useBean>
+<jsp:setProperty property="*" name="obj" />
 
 <title>submit details</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">	
+	
 <!-- JavaScript Bundle with Popper -->
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -50,6 +55,8 @@ h3 {
   box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
   color: #fff;
   transform: translateY(-7px);
+}.icon{
+margin-left: 1650px;
 }
 </style>
 </head>
@@ -59,19 +66,16 @@ h3 {
 		style="background-color: #F4F9F9;">
 
 		<ul class="navbar-nav mr-auto">
+		<li class="nav-item"><a class="nav-link active"
+				aria-current="page" href="servlet"><i
+					class="fas fa-arrow-circle-left fa-2x"></i></a></li>
 			<li class="nav-item active"><a style="color: black"
-				class="nav-link" href="Index.jsp"><strong>Home</strong></a></li>
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-				role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					Actions</a>
-				<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<li><a class="dropdown-item" href="Index.jsp">Add</a></li>
-					<li><a class="dropdown-item" href="getbyid.jsp">GetById</a></li>
-					<li><a class="dropdown-item" href="servlet">GetAll</a></li>
-				</ul></li>
-		</ul>
-
+				class="nav-link" href="servlet"><strong>Home</strong></a></li>
+			
+					</ul>
+					<ul class="navbar-nav mr-auto">
+<li class="nav-item"><a class="nav-link active"
+				aria-current="page" href="getbyid.jsp"><i class="fas fa-arrow-circle-right fa-2x icon"></i></a></li></ul>
 		<form class="form-inline my-2 my-lg-0"></form>
 
 		<a href="Home.jsp">
@@ -81,7 +85,7 @@ h3 {
 	<div align="center" class="fixed-top">
 		<h3>Enter the details</h3>
 		<br> <br>
-		<form action="register.jsp" method="post">
+		<form action="fetch">
 			<table>
 				<tr>
 					<td>Id</td>
