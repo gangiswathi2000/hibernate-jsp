@@ -68,7 +68,7 @@ body {
 <body>
 	<div class="container">
 		<form class="form-signin" role="form"
-			action="servlet"
+			action="adding"
 			method="post">
 			<h2 class="form-signin-heading">Login</h2>
 			<input name="admin" type="text" class="form-control"

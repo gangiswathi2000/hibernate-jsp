@@ -52,7 +52,18 @@ th {
 }
 </style>
 </head>
-<body>
+<body><%
+	
+	boolean isLoggedIn = (request.getSession().getAttribute("admin") == null) ? false : true;
+
+
+
+	if (!isLoggedIn) {
+		System.out.println("logged out");
+	response.sendRedirect("Home.jsp");
+	}
+	
+	%>
 	<form action="adding">
 		<br> <strong>Id: </strong> <input class="form-control-sm cls"
 			type="text" name="id" required> <br> <br> <input

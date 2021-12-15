@@ -6,8 +6,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Update details</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">	
+	
 <!-- JavaScript Bundle with Popper -->
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -17,6 +18,11 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://kit.fontawesome.com/9e363b886a.js"></script>
 <style type="text/css">
+body
+{
+color:black;
+background-color:#B1D0E0;
+}
 td {
 	padding: 20px;
 	font-family: Georgia, serif;
@@ -49,14 +55,23 @@ h3 {
 }
 
 .button:hover {
-	background-color: #2EE59D;
-	box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+	background-color: #5584AC;
+	box-shadow: #84DFFF;
 	color: #fff;
 	transform: translateY(-7px);
 }
+.icon {
+	margin-left: 1680px;
+}
 </style>
 </head>
-<body>
+<body><%
+	
+	boolean isLoggedIn = (request.getSession().getAttribute("admin") == null) ? false : true;
+	if (!isLoggedIn) {
+	response.sendRedirect("Home.jsp");
+	}
+	%>
 	<nav class="navbar navbar-expand-lg navbar-light fixed-top"
 		style="background-color: #F4F9F9;">
 
@@ -77,7 +92,7 @@ h3 {
 		<form class="form-inline my-2 my-lg-0"></form>
 
 		<a href="Home.jsp">
-			<button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout</button>
+			<button class="btn btn-outline-danger my-2 my-sm-0 icon" type="submit">Logout</button>
 		</a>
 	</nav>
 	<%

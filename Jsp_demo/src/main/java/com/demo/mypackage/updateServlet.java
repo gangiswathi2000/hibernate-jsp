@@ -44,7 +44,7 @@ public class updateServlet extends HttpServlet {
 		e.setFname(fname);
 		e.setLname(lname);
 		StoreData.register(e);
-		System.out.println(e.toString());
+		
 		RequestDispatcher rd=req.getRequestDispatcher("Index.jsp");
 		out.println("<div style=\"margin-top:100px; margin-left:725px;\" class=\"alert alert-success alert-dismissible fade show w-25\" role=\"alert\"><strong>Successfully Inserted!</strong> <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button></div>");
 		rd.include(req, res);

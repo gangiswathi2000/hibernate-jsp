@@ -58,6 +58,9 @@ h3 {
 }.icon{
 margin-left: 1650px;
 }
+.but3{
+margin-left:1750px;
+}
 </style>
 </head>
 <body style="background-color: #C6F1E7">
@@ -66,21 +69,16 @@ margin-left: 1650px;
 		style="background-color: #F4F9F9;">
 
 		<ul class="navbar-nav mr-auto">
-		<li class="nav-item"><a class="nav-link active"
-				aria-current="page" href="servlet"><i
-					class="fas fa-arrow-circle-left fa-2x"></i></a></li>
 			<li class="nav-item active"><a style="color: black"
 				class="nav-link" href="servlet"><strong>Home</strong></a></li>
-			
-					</ul>
-					<ul class="navbar-nav mr-auto">
-<li class="nav-item"><a class="nav-link active"
-				aria-current="page" href="getbyid.jsp"><i class="fas fa-arrow-circle-right fa-2x icon"></i></a></li></ul>
+			</ul>
+					
 		<form class="form-inline my-2 my-lg-0"></form>
-
-		<a href="Home.jsp">
+<ul  class="navbar-nav mr-auto but3">
+		<li><a href="Home.jsp">
 			<button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout</button>
-		</a>
+		</a></li>
+		</ul>
 	</nav>
 	<div align="center" class="fixed-top">
 		<h3>Enter the details</h3>

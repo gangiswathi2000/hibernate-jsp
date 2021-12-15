@@ -9,6 +9,10 @@
 <head>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<!-- JavaScript Bundle with Popper -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet">
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script
@@ -105,7 +109,15 @@ th {
 </style>
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<%
+	boolean isLoggedIn = (request.getSession().getAttribute("admin") == null) ? false : true;
+	if (!isLoggedIn) {
+		System.out.println("logged out");
+	response.sendRedirect("Home.jsp");
+	}
+	%>
+	<nav
+		class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#"><i class="far fa-user-circle"></i>
 				Dashboard</a>
@@ -127,9 +139,6 @@ th {
 						class="nav-link" title="click to delete!" onclick="deleteFun()"><i
 							class="fas fa-user-minus "></i> Delete</a></li>
 				</ul>
-
-
-
 			</div>
 			<form class="form-inline my-2 my-lg-0">
 				<input title="Search!" onkeyup="myFunction()"
@@ -137,9 +146,10 @@ th {
 					placeholder="Search by Id" aria-label="Search">
 				&nbsp;&nbsp;&nbsp;
 			</form>
-			<a href="Home.jsp">
-			<button class="btn btn-outline-danger my-2 my-sm-0" type="submit"> Exit</button>
-		</a>
+			<a href="LogoutController">
+				<button class="btn btn-outline-danger my-2 my-sm-0" type="submit">
+					Logout</button>
+			</a>
 		</div>
 
 	</nav>
@@ -190,8 +200,8 @@ th {
 			document.getElementById("perform").submit();
 		}
 		function myFunction() {
-			var  filter, table, tr, td, i, txtValue;
-			filter= document.getElementById("myInput").value;
+			var filter, table, tr, td, i, txtValue;
+			filter = document.getElementById("myInput").value;
 			table = document.getElementById("mytable");
 			tr = table.getElementsByTagName("tr");
 			for (i = 0; i < tr.length; i++) {

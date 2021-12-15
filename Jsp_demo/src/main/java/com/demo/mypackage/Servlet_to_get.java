@@ -28,10 +28,11 @@ public class Servlet_to_get extends HttpServlet {
 
 	public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 		res.setContentType("text/html");
-	
-		System.out.println("hiip");
+		RequestDispatcher rd = null;
+	  
+		
 		String[] names = req.getParameterValues("names");
-		System.out.println(names);
+		
 		if (!(names == null)) {
 			@SuppressWarnings("rawtypes")
 			List list = Arrays.asList(names);
@@ -39,8 +40,14 @@ public class Servlet_to_get extends HttpServlet {
 			String action=req.getParameter("act");
 			if (action!=null && action.equals("edit")) {
 				if (list.size() > 1) {
-					System.out.println("Please select only one user!");
-					doGet(req, res);
+					req.setAttribute("getall", "true");
+					//out.println("<div style=\" margin-top: -450px; margin-left:725px;\" class=\"alert alert-warning alert-dismissible fade show w-25\" role=\"alert\"><strong>Please select only one user!</strong> <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button></div>");
+					rd=req.getRequestDispatcher("GetAll.jsp");
+					rd.include(req, res);
+					//out.println("<div style=\" margin-top: -450px; margin-left:725px;\" class=\"alert alert-warning alert-dismissible fade show w-25\" role=\"alert\"><strong>Please select only one user!</strong> <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button></div>");
+					
+					//rd.include(req, res);
+					//doGet(req, res);
 				} else {
 					if (list.size() == 1) {
 						int id = Integer.parseInt((String) list.get(0));
@@ -48,17 +55,19 @@ public class Servlet_to_get extends HttpServlet {
 						e = StoreData.getbyid(id);
 						HttpSession s = req.getSession();
 						s.setAttribute("user", e);
-						res.sendRedirect("update.jsp");
-
+						rd=req.getRequestDispatcher("update.jsp");			
+						rd.include(req, res);
+						//out.println("<div style=\" margin-top: -450px; margin-left:725px;\" class=\"alert alert-success alert-dismissible fade show w-25\" role=\"alert\"><strong>Successfully updated!</strong> <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button></div>");
 					}
 				}
-
 			}
 			if (action!=null && action.equals("del")) {
-				System.out.println("deleteeed");
 				for (int i = 0; i < list.size(); i++) {
 					int id = Integer.parseInt((String) list.get(i));
 					StoreData.delete(id);
+					rd=req.getRequestDispatcher("GetAll.jsp");			
+					rd.include(req, res);
+					//out.println("<div style=\" margin-top: -450px; margin-left:725px;\" class=\"alert alert-success alert-dismissible fade show w-25\" role=\"alert\"><strong>Details deleted Successfully!</strong> <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button></div>");
 				}
 				doGet(req, res);
 			}
