@@ -83,7 +83,7 @@ margin-left:1750px;
 	<div align="center" class="fixed-top">
 		<h3>Enter the details</h3>
 		<br> <br>
-		<form action="fetch">
+		<form action="fetch" method="Post">
 			<table>
 				<tr>
 					<td>Id</td>
@@ -104,7 +104,7 @@ margin-left:1750px;
 
 			</table>
 			<br> <br> <input type="submit"
-				class="button" value="Save" />
+				name="saved" class="button" value="Save" />
 		</form>
 	</div>
 </body>

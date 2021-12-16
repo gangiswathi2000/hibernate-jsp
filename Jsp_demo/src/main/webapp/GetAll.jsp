@@ -130,8 +130,7 @@ th {
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a style="cursor: pointer;"
-						class="nav-link" href="Index.jsp" title="click to save!"><i
-							class="fas fa-user-edit "></i> Save </a></li>
+						class="nav-link" href="Index.jsp" title="click to save!"><i class="fas fa-user-plus"></i> Save </a></li>
 					<li class="nav-item"><a style="cursor: pointer;"
 						class="nav-link" title="click to edit!" onclick="editFun()"><i
 							class="fas fa-user-edit "></i> Edit </a></li>

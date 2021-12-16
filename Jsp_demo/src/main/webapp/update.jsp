@@ -77,16 +77,7 @@ h3 {
 
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item active"><a style="color: black"
-				class="nav-link" href="Index.jsp"><strong>Home</strong></a></li>
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-				role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					Actions</a>
-				<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<li><a class="dropdown-item" href="Index.jsp">Add</a></li>
-					<li><a class="dropdown-item" href="getbyid.jsp">GetById</a></li>
-					<li><a class="dropdown-item" href="servlet">GetAll</a></li>
-				</ul></li>
+				class="nav-link" href="servlet"><strong>Home</strong></a></li>
 		</ul>
 
 		<form class="form-inline my-2 my-lg-0"></form>
@@ -113,12 +104,12 @@ h3 {
 			<tr>
 				<td>First name</td>
 				<td><input class="form-control-sm" placeholder="@Rohit"
-					value=<%=e.getFname()%>	 type="text" name="fname" required /></td>
+					value="<%=e.getFname()%>"	 type="text" name="fname" required /></td>
 			</tr>
 			<tr>
 				<td>Last name</td>
 				<td><input class="form-control-sm" placeholder="@Sharma"
-					value=<%=e.getLname()%> type="text" name="lname" required /></td>
+					value="<%=e.getLname()%>" type="text" name="lname" required /></td>
 			</tr>
 
 		</table>

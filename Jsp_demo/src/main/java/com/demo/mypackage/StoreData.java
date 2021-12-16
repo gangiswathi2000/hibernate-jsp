@@ -2,11 +2,11 @@ package com.demo.mypackage;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
 
 public class StoreData {
 	public static int register(Employee e) {
@@ -73,11 +73,13 @@ public class StoreData {
 	                    (Employee)session.get(Employee.class, id); 
 	         employee.setFname(e.getFname());
 	         employee.setLname(e.getLname());
-	         session.update(employee); 
+	         session.update(employee);
+	         
 	         session.getTransaction().commit();
 	      }catch (HibernateException e1) {
 	         if (session.getTransaction()!=null) session.getTransaction().rollback();
 	         e1.printStackTrace(); 
 	      }
 	   }
+	
 }
