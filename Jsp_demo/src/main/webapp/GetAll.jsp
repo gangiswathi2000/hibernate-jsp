@@ -137,6 +137,8 @@ th {
 					<li class="nav-item"><a style="cursor: pointer;"
 						class="nav-link" title="click to delete!" onclick="deleteFun()"><i
 							class="fas fa-user-minus "></i> Delete</a></li>
+							<li class="nav-item"><a style="cursor: pointer;"
+						class="nav-link" title="click to undo!" onclick="undoFun()"><i class="fas fa-trash-restore-alt"></i> Undo </a></li>
 				</ul>
 			</div>
 			<form class="form-inline my-2 my-lg-0">
@@ -163,7 +165,7 @@ th {
 				<th></th>
 				<th>Id</th>
 				<th>Fname</th>
-				<th>Fname</th>
+				<th>Lname</th>
 			</tr>
 			<%
 			for (Employee e : l) {
@@ -196,6 +198,10 @@ th {
 		}
 		function editFun() {
 			document.getElementById("perform").action = "delete?act=edit";
+			document.getElementById("perform").submit();
+		}
+		function undoFun() {
+			document.getElementById("perform").action = "delete?act=del&act1=undo";
 			document.getElementById("perform").submit();
 		}
 		function myFunction() {

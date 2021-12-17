@@ -38,7 +38,6 @@ public class updateServlet extends HttpServlet {
 			Employee e1 = (Employee) req.getSession().getAttribute("user");
 			String fname = (req.getParameter("fname"));
 			String lname = (req.getParameter("lname"));
-			System.out.println(fname+" "+lname);
 			e.setId(e1.getId());
 			e.setLname(lname);
 			e.setFname(fname);
@@ -46,7 +45,6 @@ public class updateServlet extends HttpServlet {
 			req.setAttribute("getall", "true");
 			RequestDispatcher rd = req.getRequestDispatcher("GetAll.jsp");
 			rd.include(req, res);
-			
 			out.println(
 					"<div style=\" margin-top: -300px; margin-left:725px;\" class=\"alert alert-success alert-dismissible fade show w-25\" role=\"alert\"><strong>Successfully updated!</strong> <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button></div>");
 			session.removeAttribute("user");
